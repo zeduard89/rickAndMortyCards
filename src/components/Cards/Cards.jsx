@@ -4,12 +4,16 @@ import Card from '../Card/Card';
 
 const Cards = ({characters,onClose}) => {//({characters}) DESTRUCTURING
 
+   
+
 
    return (
       
    <div >  
       
-      {characters.map(({id,name,status,species,gender,origin,image}) =>{//{characters}
+      {
+      
+         characters.map(({id,name,status,species,gender,origin,image}) =>{//{characters}
          return (
             <Card 
             key={id}//{characters.id}
@@ -22,8 +26,11 @@ const Cards = ({characters,onClose}) => {//({characters}) DESTRUCTURING
             image={image}
             onClose={onClose}
             />
-         )
-      })}
+         )})
+
+         
+      }
+
    </div>
 
    )
