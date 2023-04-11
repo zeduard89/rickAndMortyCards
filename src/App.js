@@ -9,6 +9,7 @@ import Detail from './components/Detail/Detail';
 import Error from './components/Error/Error';
 import Form from './components/Form/Form';
 
+
 const URL_BASE = 'https://be-a-rym.up.railway.app/api/character'
 const API_KEY = '5d13682840d5.ea46b2043d2ab3aa18ab'
 
@@ -84,7 +85,9 @@ function App() {
    }, [access]);
    
    return (
-      <div className='App'> 
+      
+      <div className='App'>
+      
          <NavBar onSearch={onSearch} logout={logout}/>
          <Routes>
             <Route path='/' element={<Form login={login} access={access}/>}/>

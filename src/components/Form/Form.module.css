@@ -1,0 +1,80 @@
+.bodyForm{
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    position: relative;
+    margin: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.Form{
+    background-color: rgb(114, 109, 109);
+    border-radius: 2rem;
+    border-color: rgb(255, 242, 240);
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 20rem;
+    height: 30rem;
+    padding: 2rem;
+    margin: 2rem;
+}
+
+.accesoRestringido{
+    width: 100%;
+    height: 70%;
+    background-image: url('./imgForm/vector.jpg');
+    background-size: 95% 100%;
+    border-radius: 3rem;
+    
+}
+
+.div1y2{
+    padding: .5rem;
+    width: 20rem;
+    
+}
+
+.button{
+    border-radius: .5rem;
+    height: 2rem;
+    width: 15rem;
+    
+}
+
+.imagen1{
+    border-radius: 10rem;
+    height: 90%;
+    margin-top: 2rem;
+    border-color: black;
+    background-image: url(/src/components/Form/imgForm/portal.png);
+    background-size: 100%;
+}
+
+
+@media only screen and (min-width: 750px) and (max-width: 1200px) {
+    .Form{
+        width: 20rem;
+        height: 29rem;
+        margin-right: 4rem;
+
+    }
+    .imagen1{
+        margin-top: 6rem;
+        margin-left: 2rem;
+        width: 45%;
+        height: 70%;
+        
+    }
+}
+
+ @media only screen and (min-width: 100px) and (max-width: 750px) {
+    .imagen1{
+         display: none;
+     }
+}
+
+    
