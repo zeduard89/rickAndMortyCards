@@ -1,6 +1,6 @@
 import React from 'react';
 import Card from '../Card/Card';
-
+import styles from './Cards.module.css'
 
 const Cards = ({characters,onClose}) => {//({characters}) DESTRUCTURING
 
@@ -9,7 +9,7 @@ const Cards = ({characters,onClose}) => {//({characters}) DESTRUCTURING
 
    return (
       
-   <div >  
+   <div className={styles.divCards}>  
       
       {
       

@@ -1,0 +1,4 @@
+.divCards{
+    display: flex;
+    flex-wrap: wrap; 
+}

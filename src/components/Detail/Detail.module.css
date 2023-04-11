@@ -1,0 +1,25 @@
+.card{
+    margin: 3rem;
+    width: 15rem;
+    display: flex;
+    flex-direction: column;
+    border-width: 5px;
+    color: black;
+    
+}
+ 
+.cardImg{
+    width: 15rem;
+    height: 20rem;
+    border-top-left-radius: 1rem;
+    border-top-right-radius: 1rem;
+ }
+    
+.cardText{
+    background-color: rgb(242, 244, 247);
+    height: 20rem;
+    padding-left: 1rem;
+    border-bottom-left-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+}
+    

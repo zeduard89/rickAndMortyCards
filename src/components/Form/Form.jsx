@@ -52,11 +52,11 @@ const handleOnSubmit = (event)=>{
             <div className={styles.div1y2}>
                 <label >PASSWORD</label>
                 <hr />
-                <input type="text" placeholder='Tu password aqui' name='password' value ={userData.value} onChange={handleOnChange}/>
+                <input type="password" placeholder='Tu password aqui' name='password' value ={userData.value} onChange={handleOnChange}/>
                 {errors.password && <p>{errors.password}</p>}
             </div>
 
-            <button className={styles.button} >SUBMIT</button>
+            <button className={styles.button} >INGRESAR</button>
         </form>
 
     </body>

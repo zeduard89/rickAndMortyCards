@@ -1,16 +1,18 @@
 .bodyForm{
-    background-color: black;
+    background-image: url(/src/components/Form/imgForm/fondoEstrellas.jpg);
+    border-radius: 2rem;
     display: flex;
     flex-direction: row;
     justify-content:center;
     position: relative;
-    margin: 1rem;
-    width: 100%;
-    height: 100%;
+    margin: 0;
+    text-align: center;
+    font-style: normal;
+    
 }
 
 .Form{
-    background-color: rgb(114, 109, 109);
+    background-color: rgb(104, 91, 91);
     border-radius: 2rem;
     border-color: rgb(255, 242, 240);
     color: aliceblue;

@@ -1,4 +1,5 @@
 import {useState} from 'react'
+import styles from '../NavBar/NavBar.module.css'
 
 const SearchBar = (props) => {
 
@@ -16,12 +17,12 @@ return randomId;
 }
 
    return (
-      <div>
-         <input id='input' onChange ={handleChange} value= {id} type='search'/>
-         <br />
-         <button onClick={()=> props.onSearch(id)}>Agregar</button>
-         <br />
-         <button onClick={()=> props.onSearch(random())}> Agregar Random Char</button>
+      <div className={styles.searchBar}>
+         <input className={styles.button} id='input' onChange ={handleChange} value= {id} type='search'/>
+         
+         <button className={styles.button} onClick={()=> props.onSearch(id)}>Agregar</button>
+        
+         <button className={styles.button} onClick={()=> props.onSearch(random())}>Random Character</button>
 
       </div>
    );
