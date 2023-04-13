@@ -27,7 +27,7 @@ useEffect(() =>{
          setIsFav(true);
       }
    })
-},[myFavorites]);
+},[]);
 
 
 return (
