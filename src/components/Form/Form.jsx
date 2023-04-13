@@ -37,7 +37,7 @@ const handleOnSubmit = (event)=>{
 
   return (
 
-    <body className={styles.bodyForm}>
+    <div className={styles.bodyForm}>
         
         <img className ={styles.imagen1} src={imgForm.rickAndMorty} alt="rickAndMorty" />
         
@@ -59,7 +59,7 @@ const handleOnSubmit = (event)=>{
             <button className={styles.button} >INGRESAR</button>
         </form>
 
-    </body>
+    </div>
     
   )
 }

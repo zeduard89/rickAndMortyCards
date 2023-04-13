@@ -2,6 +2,7 @@ import {useState,useEffect} from 'react';
 import { Route,Routes, useNavigate} from 'react-router-dom';
 import axios from 'axios';
 import './App.css';
+import Favorites from './components/Favorites/Favorites';
 import NavBar from './components/NavBar/NavBar';
 import Cards from './components/Cards/Cards.jsx';
 import About from './components/About/About';
@@ -95,7 +96,7 @@ function App() {
             <Route path='/about' element={<About/>}/>
             <Route path='/detail/:id' element={<Detail/>}/>
             <Route path=':error' element={<Error/>}/>
-
+            <Route path='/favorites' element={<Favorites/>}/>
          </Routes>
       </div>
    );

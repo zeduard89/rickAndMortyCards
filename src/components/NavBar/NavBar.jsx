@@ -8,10 +8,12 @@ const NavBar = (props) => {
 const location = useLocation()
 
   return (
-    <nav className={styles.navBar}>
-
-      {location.pathname !== `/` ?(
-      <containter className={styles.container}>
+    
+  <>
+  {
+    location.pathname !== `/` ?(
+    <nav className={styles.navBar}>    
+      <div className={styles.container}>
         <div>
           <SearchBar onSearch={props.onSearch} />
         </div> 
@@ -22,17 +24,17 @@ const location = useLocation()
             <button className={styles.buttonNav}>
               <NavLink to='/about'>About</NavLink>
             </button>
+            <button className={styles.buttonNav}>
+              <NavLink to='/favorites'>Favorites</NavLink>
+            </button>
             <button className={styles.buttonNav} onClick={()=>props.logout()}>Log Out</button>
+            
         </div>  
-                  
-              
-              
-         
-           
-      </containter>):null}
+      </div>
 
-
-    </nav>
+    </nav> ):null
+  }
+  </> 
   )
 }
 
