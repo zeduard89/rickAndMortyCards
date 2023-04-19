@@ -39,9 +39,6 @@ useEffect(() => {
           <h2>{character?.gender}</h2>
           <h2>{character?.origin?.name}</h2>
         </div>
-        
-        
-
     </container>
   )
 }

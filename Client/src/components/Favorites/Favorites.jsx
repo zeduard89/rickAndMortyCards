@@ -56,6 +56,7 @@ const [aux, setAux] = useState(false);
                     origin={fav.origin}
                     image={fav.image}
                     onClose={onClose}
+                    
                     />
                 )}})
             }    

@@ -5,7 +5,7 @@ import styles from './NavBar.module.css';
 
 const NavBar = (props) => {
 
-const location = useLocation()
+const location = useLocation();
 
   return (
     
