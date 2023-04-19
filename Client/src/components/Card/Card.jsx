@@ -44,7 +44,7 @@ return (
       
       {location.pathname !== '/favorites'?<button  className={style.cardClose} onClick={()=>{onClose(id)}}>X</button>: <button className={style.cardClose}></button>}
       <img className={style.cardImg} src={image} alt='' /> 
-      <button onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>
+      <button className={style.corazon} onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>
       <div className={style.cardText}>
           <NavLink to={`/detail/${id}`}>
             <h2>{name}</h2>

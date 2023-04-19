@@ -8,7 +8,7 @@
     margin: 0;
     text-align: center;
     font-style: normal;
-    margin-top: 14rem;
+    margin-top: 5rem;
     
 }
 
@@ -33,6 +33,16 @@
     background-size: 95% 100%;
     border-radius: 3rem;
     
+}
+
+.tituloFondo {
+    font-family: 'rickAndMorty';
+    font-size: 8rem;
+    color: rgba(8, 251, 52, 0.897);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5rem;
 }
 
 .div1y2{
@@ -72,12 +82,33 @@
         height: 70%;
         
     }
+
+    .tituloFondo {
+        font-size: 5rem;
+        margin-top: 5rem;
+    }
+
+
 }
 
- @media only screen and (min-width: 100px) and (max-width: 750px) {
+ @media only screen and (min-width: 440px) and (max-width: 750px) {
     .imagen1{
          display: none;
      }
+
+     .tituloFondo {
+        font-size: 3rem;
+        margin-top: 5rem;
+    }
 }
 
     
+@media only screen and (min-width: 100px) and (max-width: 440px) {
+
+    .imagen1{
+        display: none;
+    }
+    .tituloFondo {
+        display:none;
+    }
+}

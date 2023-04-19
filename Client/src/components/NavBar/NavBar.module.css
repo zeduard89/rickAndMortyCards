@@ -30,7 +30,7 @@
 
 
 
-@media only screen and (min-width: 760px) and (max-width: 950px) {
+@media only screen and (min-width: 870px) and (max-width: 950px) {
     .buttonNav{
         width:6rem;
         background-color: greenyellow;
@@ -48,14 +48,23 @@
 
 }
 
- @media only screen and (min-width: 100px) and (max-width: 760px) {
+ @media only screen and (min-width: 520px) and (max-width: 870px) {
+    .navBar{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        
+    }
+    
+    
     .container{
         flex-direction: row;
     }
     .buttonNav{
         width:5rem;
         background-color: greenyellow;
-        border-radius: 1rem;  
+        border-radius: 1rem;
+        margin-inline: 1rem; 
     }
 
     .button{
@@ -65,9 +74,13 @@
 }
 
 
-@media only screen and (min-width: 100px) and (max-width: 300px) {
+@media only screen and (min-width: 100px) and (max-width: 520px) {
     .navBar{
         display: none;
     }
+    .button{
+        display: none;
+    }
+
 
 }

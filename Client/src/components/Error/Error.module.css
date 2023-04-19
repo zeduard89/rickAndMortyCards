@@ -1,0 +1,9 @@
+.error {
+    font-family: 'rickAndMorty';
+    font-size: 8rem;
+    color: rgba(80, 250, 111, 0.841);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+}
