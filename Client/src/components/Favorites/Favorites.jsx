@@ -5,7 +5,9 @@ import styles from '../Cards/Cards.module.css'
 import Card from '../Card/Card';
 
 
-const Favorites = ({myFavorites}) => {
+const Favorites = ({myFavorites,onClose}) => {
+
+    
 
 const dispatch = useDispatch();
 
@@ -17,7 +19,12 @@ const handleFilter = (event) => {
 }
 
 const [aux, setAux] = useState(false);
-    
+
+
+
+
+
+
   return (
        <div >
             <div>
@@ -48,7 +55,7 @@ const [aux, setAux] = useState(false);
                     gender={fav.gender}
                     origin={fav.origin}
                     image={fav.image}
-                    //onClose={onClose}
+                    onClose={onClose}
                     />
                 )}})
             }    
