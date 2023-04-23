@@ -11,8 +11,8 @@ import Error from './components/Error/Error';
 import Form from './components/Form/Form';
 
 
-const URL_BASE = 'https://be-a-rym.up.railway.app/api/character'
-const API_KEY = '5d13682840d5.ea46b2043d2ab3aa18ab'
+// const URL_BASE = 'https://be-a-rym.up.railway.app/api/character'
+// const API_KEY = '5d13682840d5.ea46b2043d2ab3aa18ab'
 
 function App() {
 
@@ -37,7 +37,7 @@ function App() {
    //Funcion busca en base de datos CHARACTER
    function onSearch(id) {
       if(id > 0 && id < 827) {
-         axios(`${URL_BASE}/${id}?key=${API_KEY}`)
+         axios(`http://localhost:3001/rickandmorty/characters/${id}`)
             .then(response => response.data)
             .then((data) => {
                if(data.name && !characterRepeat(id)){//

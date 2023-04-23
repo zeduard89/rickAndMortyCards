@@ -3,8 +3,8 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import styles from './Detail.module.css'
 
-const URL_BASE = 'https://be-a-rym.up.railway.app/api/character'
-const API_KEY = '5d13682840d5.ea46b2043d2ab3aa18ab'
+// const URL_BASE = 'https://be-a-rym.up.railway.app/api/character'
+// const API_KEY = '5d13682840d5.ea46b2043d2ab3aa18ab'
 
 const Detail = () => {
 
@@ -13,7 +13,7 @@ const [character,setCharacter] = useState({})
 
 
 useEffect(() => {
-  axios(`${URL_BASE}/${id}?key=${API_KEY}`)
+  axios(`http://localhost:3001/rickandmorty/characters/${id}`)
   .then(response => response.data)
   .then((data) => {
      if (data.name) {

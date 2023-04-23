@@ -1,5 +1,10 @@
 body{
    background-image: url(/src/components/Form/imgForm/fondoEstrellas.jpg);
+   background-repeat: no-repeat;
+   background-size:cover;
+   background-attachment:fixed;
+   background-position: center center;
+
    color: aliceblue;
 }
 
