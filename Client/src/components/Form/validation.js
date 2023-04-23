@@ -11,6 +11,7 @@ export const validation = (userData) => {
         }else if(userData.email.length > 35){
             errors.email = 'Ingrese un email menor a 35 caracteres'
         }
+
         if(userData.password.length < 6 || userData.password.length > 10){
             errors.password = 'Ingrese un password entre 6 y 10 caracteres'
         }else if(!userData.password.match(/\d/)){

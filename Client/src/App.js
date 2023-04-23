@@ -16,13 +16,37 @@ import Form from './components/Form/Form';
 
 function App() {
 
-   //ESTADO LOGIN
+   //Funcion LOGIN
    const navigate = useNavigate();
-   const [access,setAccess] = useState({
-      state:false,
-      EMAIL:'zeduard89@gmail.com',
-      PASSWORD:'zeduard89'
-   })
+
+   const [access,setAccess] = useState(false)
+
+   function login(userData) {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/login/';
+      axios(URL + `?email=${email}&password=${password}`)
+      .then(({ data }) => {
+         const { access } = data;
+         setAccess(data);
+         access && navigate('/home');
+      })
+      .catch((error) => console.log(error));
+   }
+
+   //cuando cambia Access, compruebo estado/dir
+   useEffect(() => {
+      !access && navigate('/');
+   }, [access]);
+
+   //Funcion-Button del NavBar
+   function logout() {
+    setAccess({
+      ...access,
+      state:false});
+    navigate('/')
+   }
+
+
    
 
    //ESTADO CHARACTERS
@@ -40,7 +64,7 @@ function App() {
          axios(`http://localhost:3001/rickandmorty/characters/${id}`)
             .then(response => response.data)
             .then((data) => {
-               if(data.name && !characterRepeat(id)){//
+               if(data.name && !characterRepeat(id)){
                setCharacters((oldChars) => [...oldChars, data]);
                }else{
                alert('¡Ingresa una Id Valida, no repetida');
@@ -59,33 +83,6 @@ function App() {
       setCharacters(charactersFiltered);
    }
 
-   //Funcion LOGIN
-   function login(userData){
-      
-      if(userData.password === access.PASSWORD && userData.email === access.EMAIL){ 
-         setAccess({
-            ...access,
-            state:true
-         });
-         navigate('/home');
-      }else {
-         alert('Ingresa tu email o password son incorrectos')
-      }
-    }
-
-   function logout() {
-    setAccess({
-      ...access,
-      state:false});
-    navigate('/')
-    
-   }
-
-   
-
-   useEffect(() => {
-      !access && navigate('/');
-   }, [access]);
    
    return (
       

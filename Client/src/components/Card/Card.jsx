@@ -34,9 +34,6 @@ useEffect(() =>{
 },[]);
 
 
-   
-
-
 return (
    
    <div className={style.card}>
