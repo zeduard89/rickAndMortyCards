@@ -18,7 +18,7 @@ const handleFilter = (event) => {
     dispatch(filterCards(event.target.value));
 }
 
-const [aux, setAux] = useState(false);
+//const [aux, setAux] = useState(false);
 
 
 

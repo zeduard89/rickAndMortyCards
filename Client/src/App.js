@@ -41,14 +41,16 @@ function App() {
             .then(response => response.data)
             .then((data) => {
                if(data.name && !characterRepeat(id)){//
-                  console.log(data.name);
                setCharacters((oldChars) => [...oldChars, data]);
                }else{
-               alert('¡Ingresa una Id Valida');
+               alert('¡Ingresa una Id Valida, no repetida');
                }
-         });
+               }) 
+            .catch((error) => console.log(error));
+         
       } else alert('Selecciona un numero entre 1 y 826');
    }
+  
 
    //Funcion Cierre card CHRACTERS
    function onClose(id) {

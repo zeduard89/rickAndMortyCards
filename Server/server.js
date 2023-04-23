@@ -2,16 +2,13 @@ const express = require('express');
 const server = express();
 const cardRouter = require('./routes/cardRoutes')
 const userRouter = require('./routes/userRoutes')
+const favRouter = require('./routes/favRoutes')
+
 const PORT = 3001;
 
-//middlewares
+//! middlewares
 //parseará el body de las solicitudes en formato JSON
 server.use(express.json());
-//agregará el prefijo "/rickandmorty" a todas las rutas definidas en tu router.
-server.use('/rickandmorty',cardRouter);
-server.use('/login',userRouter)
-
-
 
 //middleware de CORS que permitirá el acceso desde cualquier origen, con credenciales 
 //y con los métodos HTTP que necesites
@@ -29,6 +26,14 @@ server.use((req, res, next) => {
    next();
 });
 
+//! Router
+//agregará el prefijo "/rickandmorty".
+server.use('/rickandmorty',cardRouter);
+server.use('/favorites',favRouter);
+server.use('/login',userRouter)
+
+
+//! Monto el server
 server.listen(PORT, () => {
    console.log('Server raised in port: ' + PORT);
 });

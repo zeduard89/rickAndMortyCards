@@ -1,29 +1,15 @@
 
-let myFavorites = [{
-    "id": 1,
-    "name": "Rick Sanchez",
-    "status": "Alive"
-},
-{
-    "id": 2,
-    "name": "Rick Sanchez",
-    "status": "Alive"
-},
-{
-    "id": 3,
-    "name": "Rick Sanchez",
-    "status": "Alive"
-}];
+let myFavorites = [];
 
 const postFav = (req,res) => {
     
     const fav = req.body;
     if(fav.id){
-    myFavorites.push(fav);
-    res.status(200).json(myFavorites)
+        myFavorites.push(fav);
+        return res.status(200).json(myFavorites)
     }else{
-    res.status(500).json({error:'Invalid action'})
-    }
+        return res.status(500).json({error:'Invalid action'})
+        }
     
 }
 
@@ -33,13 +19,17 @@ const deleteFav = (req,res) => {
     if(id > 0 && id < 826){
         myFavorites = myFavorites?.filter(fav => fav.id !== +id);
 
-        res.status(200).json(myFavorites);
+        return res.status(200).json(myFavorites);
     }else {
-        res.status(500).json({error:'Debe tener un id entre 0 y 826'})  
+        return res.status(500).json({error:'Debe tener un id entre 0 y 826'})  
     }
 
 }
 
+const getFav = (req,res)=>{
+    return res.json(myFavorites)
+}
 
 
-module.exports = {postFav,deleteFav};
+
+module.exports = {postFav,getFav,deleteFav};

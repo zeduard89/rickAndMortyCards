@@ -4,7 +4,7 @@ const getLogin = require('../controllers/getLogin')
 
 
 
-userRouter.get("/user",getLogin);
+userRouter.get("/",getLogin);
 
 
 

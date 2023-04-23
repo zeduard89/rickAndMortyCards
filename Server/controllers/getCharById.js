@@ -9,7 +9,7 @@ const getCharById = (req,res) =>{
     .then((res)=>res.data)
     .then((data)=>{
         
-        let character = {  
+        const character = {  
             id:id,
             name:data.name,
             gender:data.gender,
