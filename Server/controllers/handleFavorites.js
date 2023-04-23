@@ -1,4 +1,4 @@
-
+//Este array simula la BD
 let myFavorites = [];
 
 const postFav = (req,res) => {
