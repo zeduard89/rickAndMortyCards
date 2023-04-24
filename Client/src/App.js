@@ -9,6 +9,8 @@ import About from './components/About/About';
 import Detail from './components/Detail/Detail';
 import Error from './components/Error/Error';
 import Form from './components/Form/Form';
+import spaceVideo from './img/space.mp4';
+import fondoEstrellas from './img/fondoEstrellas.png';
 
 
 // const URL_BASE = 'https://be-a-rym.up.railway.app/api/character'
@@ -87,7 +89,9 @@ function App() {
    return (
       
       <div className='App'>
-      
+         
+         <video className='spaceVideo' src={spaceVideo} autoPlay loop muted poster={fondoEstrellas} />
+
          <NavBar onSearch={onSearch} logout={logout}/>
          <Routes>
             <Route path='/' element={<Form login={login} access={access}/>}/>
@@ -97,6 +101,7 @@ function App() {
             <Route path=':error' element={<Error/>}/>
             <Route path='/favorites' element={<Favorites onClose={onClose}/>}/>
          </Routes>
+         
       </div>
    );
 }
