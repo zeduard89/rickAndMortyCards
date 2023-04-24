@@ -45,17 +45,17 @@ export const removeFav = (id) => {
     };
  };
 
+ export const orderCards = (order) => {
+    const endpoint = `http://localhost:3001/favorites/order/${order}`;
+    return (dispatch) => {
+       axios.get(endpoint)
+       .then(({ data }) => {
+          return dispatch({
+             type: ORDER,
+             payload: data,
+        });
+       })
+       .catch((error) => console.log(error));
+    };
+ };
 
-// export const filterCards = (gender) =>{
-//     return{
-//         type:FILTER,
-//         payload:gender
-//     }
-// }
-
-export const orderCards = (order) =>{
-    return{
-        type:ORDER,
-        payload:order
-    }
-}

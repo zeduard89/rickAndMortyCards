@@ -31,13 +31,24 @@ const filterFav = (req,res) =>{
     const {gender} = req.params;
     const filterFavorites = auxiliarMyFavorites?.filter(fav => fav.gender === gender);
     
-    gender !== 'allCharacters'?
-    myFavorites = [...filterFavorites]
+    gender !== 'allCharacters'
+    ?myFavorites = [...filterFavorites]
     :myFavorites = [...auxiliarMyFavorites]
-    
+
     return res.status(200).json(myFavorites);
+}
+
+const orderFav = (req,res) =>{
+    const {order} = req.params;
+    const allCharactersFavCopy = [...auxiliarMyFavorites]
+    
+    order === 'A' 
+    ?allCharactersFavCopy.sort((a,b)=> a.id - b.id)
+    : allCharactersFavCopy.sort((a,b)=> b.id - a.id)
+
+    return res.status(200).json(allCharactersFavCopy);
 }
 
 
 
-module.exports = {postFav,getFav,deleteFav,filterFav};
+module.exports = {postFav,getFav,deleteFav,filterFav,orderFav};
