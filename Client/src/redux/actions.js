@@ -31,12 +31,27 @@ export const removeFav = (id) => {
     };
  };
 
-export const filterCards = (gender) =>{
-    return{
-        type:FILTER,
-        payload:gender
-    }
-}
+ export const filterCards = (gender) => {
+    const endpoint = `http://localhost:3001/favorites/filter/${gender}`;
+    return (dispatch) => {
+       axios.get(endpoint)
+       .then(({ data }) => {
+          return dispatch({
+             type: FILTER,
+             payload: data,
+        });
+       })
+       .catch((error) => console.log(error));
+    };
+ };
+
+
+// export const filterCards = (gender) =>{
+//     return{
+//         type:FILTER,
+//         payload:gender
+//     }
+// }
 
 export const orderCards = (order) =>{
     return{

@@ -11,24 +11,28 @@ const reducer = (state = initialState, {type,payload}) => {
         case ADD_FAV:
         return { ...state,
              myFavorites: payload,
-             allCharacters: payload };
+             allCharactersFav: payload };
 
         
         case REMOVE_FAV:
         return { 
             ...state, 
-            myFavorites: payload };    
+            myFavorites: payload};    
         
         case FILTER:
-            const allCharactersFiltered = state.allCharactersFav.filter((character)=> character.gender === payload);
-            //Filter da un nuevo array  
-            return{
+            return {
                 ...state,
-                myFavorites:
-                payload === 'allCharacters'    //si pay load Es...
-                ? [...state.allCharactersFav]  //Devuelvo mi base de fav
-                : allCharactersFiltered        //sino muestro lo filtrado
-            }
+                myFavorites: payload};
+        // case FILTER:
+        //     const allCharactersFiltered = state.allCharactersFav.filter((character)=> character.gender === payload);
+        //     //Filter da un nuevo array  
+        //     return{
+        //         ...state,
+        //         myFavorites:
+        //         payload === 'allCharacters'    //si pay load Es...
+        //         ? [...state.allCharactersFav]  //Devuelvo mi base de fav
+        //         : allCharactersFiltered        //sino muestro lo filtrado
+        //     }
         
         case ORDER:
             const allCharactersFavCopy = [...state.allCharactersFav]
