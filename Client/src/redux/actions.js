@@ -5,6 +5,7 @@ import axios from "axios";
 export const addFav = (character) => {
     const endpoint = 'http://localhost:3001/favorites/';
     return (dispatch) => {
+      // axios.post(direccion a la que le pego, lo que envio x Body)
        axios.post(endpoint, character)
        .then(({ data }) => {
           return dispatch({

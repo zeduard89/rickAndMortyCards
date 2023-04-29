@@ -19,17 +19,17 @@ import fondoEstrellas from './img/fondoEstrellas.png';
 function App() {
 
    //Funcion LOGIN
-   const navigate = useNavigate();
+   const navigate = useNavigate(); // 
 
    const [access,setAccess] = useState(false)
 
-   function login(userData) {
+   const login = (userData) => {
       const { email, password } = userData;
       const URL = 'http://localhost:3001/login/';
       axios(URL + `?email=${email}&password=${password}`)
       .then(({ data }) => {
          const { access } = data;
-         setAccess(data);
+         setAccess(access);
          access && navigate('/home');
       })
       .catch((error) => console.log(error));
@@ -90,8 +90,9 @@ function App() {
       
       <div className='App'>
          
+         
          <video className='spaceVideo' src={spaceVideo} autoPlay loop muted poster={fondoEstrellas} />
-
+         
          <NavBar onSearch={onSearch} logout={logout}/>
          <Routes>
             <Route path='/' element={<Form login={login} access={access}/>}/>
