@@ -4,6 +4,8 @@ const {getFav,postFav,deleteFav,filterFav,orderFav} = require('../controllers/ha
 
 
 favRouter.get("/",getFav);
+
+
 favRouter.get("/filter/:gender",filterFav);
 favRouter.get("/order/:order",orderFav);
 favRouter.post("/",postFav);

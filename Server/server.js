@@ -7,7 +7,7 @@ const favRouter = require('./routes/favRoutes')
 const PORT = 3001;
 
 //! middlewares
-//parseará el body de las solicitudes en formato JSON
+//parseará(json->obj'Js') el body de las solicitudes en formato JSON
 server.use(express.json());
 
 //middleware de CORS que permitirá el acceso desde cualquier origen, con credenciales 
@@ -27,7 +27,7 @@ server.use((req, res, next) => {
 });
 
 //! Router
-//agregará el prefijo "/rickandmorty".
+//agregará el prefijo "/rickandmorty" ,etc.
 server.use('/rickandmorty',cardRouter);
 server.use('/favorites',favRouter);
 server.use('/login',userRouter)

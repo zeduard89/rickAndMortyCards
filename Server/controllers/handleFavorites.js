@@ -2,16 +2,15 @@
 let myFavorites = [];
 let auxiliarMyFavorites = [];
 
-const postFav = (req,res) => {
+const postFav = async(req,res) => {
     
     const fav = req.body;
     if(fav.id){
         myFavorites.push(fav);
         auxiliarMyFavorites = [...myFavorites];
         return res.status(200).json(myFavorites)
-    }else{
-        return res.status(500).json({error:'Invalid action'})
-        }
+    }
+    return res.status(500).json({error:'Invalid action'})     
 }
 
 const deleteFav = (req,res) => {
@@ -19,7 +18,6 @@ const deleteFav = (req,res) => {
     myFavorites = myFavorites?.filter(fav => fav.id !== id);
     auxiliarMyFavorites = [...myFavorites];
     return res.status(200).json(myFavorites);
-
 }
 
 const getFav = (req,res)=>{
