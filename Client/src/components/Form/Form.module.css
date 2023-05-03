@@ -47,13 +47,33 @@ p {
 .tituloFondo {
     font-family: 'rickAndMorty';
     font-size: 8rem;
-    color: rgba(8, 251, 52, 0.897);
+    color: rgba(13, 245, 56, 0.966);
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-top: 4rem;
     margin-bottom: 3rem;
+    scale: 0.9;
 }
+.tituloFondo {
+    transition: all 0.3s ease-out;
+}
+
+.tituloFondo:hover {
+    transform: scale(1.1);
+    filter: rgba(8, 251, 52, 0.897);
+    
+}
+
+
+/* .tituloFondo {
+    text-shadow: 5px 8px 3px rgba(9, 243, 52, 0.8);
+    color:rgba(84, 228, 253, 0.897);
+  } */
+  .tituloFondo {
+    text-shadow: 1px 1px 0 #020202, -1px -1px 0 #020202, 1px -1px 0 #050505, -1px 1px 0 #020202, 8px 8px 2px rgba(8, 251, 52, 0.8);
+    color: rgba(84, 228, 253, 0.897);
+  }
 
 .div1y2{
     font-size: 1.5rem;

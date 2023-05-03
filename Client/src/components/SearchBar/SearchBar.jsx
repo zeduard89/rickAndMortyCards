@@ -18,9 +18,9 @@ return randomId;
 
    return (
       <div className={styles.searchBar}>
-         <input className={styles.button} id='input' onChange ={handleChange} value= {id} type='search'/>
+         <input className={styles.button} id='inputSerachBar' onChange ={handleChange} value= {id} type='search'/>
          
-         <button className={styles.button} onClick={()=> props.onSearch(id)}>Agregar</button>
+         <button className={styles.button} id='buttonSearchBar' onClick={()=> props.onSearch(id)}>Search</button>
         
          <button className={styles.button} onClick={()=> props.onSearch(random())}>Random Character</button>
 

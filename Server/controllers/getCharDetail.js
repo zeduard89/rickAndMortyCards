@@ -11,7 +11,7 @@ const getCharDetail = async(req,res) => {
             id:id,
             name:data.name,
             gender:data.gender,
-            species:data.specias,
+            species:data.species,
             origin:data.origin,
             image:data.image,
             status:data.status

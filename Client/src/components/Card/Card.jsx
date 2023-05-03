@@ -44,7 +44,7 @@ return (
       <button className={style.corazon} onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>
       <div className={style.cardText}>
           <NavLink to={`/detail/${id}`}>
-            <h2>{name}</h2>
+            <h2 className={style.h2}>{name}</h2>
          </NavLink>
             {/* <h2>{status}</h2>
             <h2>{species}</h2>

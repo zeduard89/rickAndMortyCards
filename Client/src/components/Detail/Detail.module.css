@@ -4,66 +4,79 @@
     justify-content: center;
     margin-top: 10rem;
     color: black;
-    
-
-    
+      
 }
  
-.cardImg{
+
+ .cardImg {
     width: 40rem;
     height: 40rem;
-    border-radius: 15rem;
+    border-radius: 50%;
     display: flex;
-    
-
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 2rem rgba(30, 233, 111, 0.781), 0 0 4rem rgba(30, 233, 111, 0.781), 0 0 8rem rgba(30, 233, 111, 0.781);
  }
-    
-.cardText{
-    background-color: rgb(30, 233, 111);
-    height: 40rem;
-    width: 25rem;
+
+.cardText {
+    background-color: rgba(30, 233, 111, 0.781);
+    height: 35rem;
+    width: 30rem;
     margin-right: 10rem;
-    padding: 1.5rem;
+    padding: 1.8rem;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
+    justify-content: space-between;
     border: solid;
     border-color: rgba(232, 62, 62, 0.347);
     border-width: .5rem;
     border-radius: 3rem;
     font-family: 'rickAndMorty';
-    font-size: 1.5rem;
- 
-}
+    font-size: 2.5rem;
+    box-shadow: 0 0 1rem rgba(30, 233, 111, 0.781), 0 0 2rem rgba(30, 233, 111, 0.781), 0 0 4rem rgba(30, 233, 111, 0.781);
+    animation: pulse 6s ease-in-out infinite;
+    overflow: hidden;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    50% {
+      transform: scale(1.1);
+      opacity: 0.8;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
 
-  @media only screen and (min-width: 758px) and (max-width: 1250px) {
+  @media only screen and (min-width: 758px) and (max-width: 1400px) {
     
     
     .card{
         
         margin-top: 10rem;
-        
-        
-    
-        
+   
     }
      
     .cardImg{
-        width: 25rem;
-        height: 25rem;
+        width: 28rem;
+        height: 28rem;
         border-radius: 15rem;
-        
-        
-    
+
      }
         
     .cardText{
         height: 20rem;
-        width: 12.5rem;
+        width: 15rem;
         margin-right: 5rem;
         padding: 1.5rem;
-        
-        font-size: .8rem;
+        margin-top: 2rem;
+        font-size: 1rem;
      
     }
 
