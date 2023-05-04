@@ -4,31 +4,39 @@ import axios from "axios";
 
 export const addFav = (character) => {
     const endpoint = 'http://localhost:3001/favorites/';
-    return (dispatch) => {
-      // axios.post(direccion a la que le pego, lo que envio x Body)
-       axios.post(endpoint, character)
-       .then(({ data }) => {
-          return dispatch({
+    return async (dispatch) => {
+      try{
+         // axios.post(direccion a la que le pego, lo que envio x Body)
+         const {data} = await axios.post(endpoint, character);
+         
+         if(!data.length) throw Error ('No Hay Favoritos');
+
+         return dispatch({
              type: ADD_FAV,
              payload: data,
           });
-       })
-       .catch((error) => console.log(error));
+      }catch(error){
+         console.log(error.message);
+      } 
     };
  };
 
 
 export const removeFav = (id) => {
     const endpoint = `http://localhost:3001/favorites/${id}`;
-    return (dispatch) => {
-       axios.delete(endpoint)
-       .then(({ data }) => {
-          return dispatch({
-             type: REMOVE_FAV,
-             payload: data,
-        });
-       })
-       .catch((error) => console.log(error));
+    return async (dispatch) => {
+      try {
+            const {data} = await axios.delete(endpoint);
+
+            if(!data.length) throw Error ('No Hay Favoritos');
+
+            return dispatch({
+               type: REMOVE_FAV,
+               payload: data,
+            });
+      }catch(error){
+         console.log(error.message)
+      };
     };
  };
 
