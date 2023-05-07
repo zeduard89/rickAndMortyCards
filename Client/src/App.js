@@ -13,8 +13,7 @@ import spaceVideo from './img/space.mp4';
 import fondoEstrellas from './img/fondoEstrellas.png';
 
 
-// const URL_BASE = 'https://be-a-rym.up.railway.app/api/character'
-// const API_KEY = '5d13682840d5.ea46b2043d2ab3aa18ab'
+
 
 function App() {
 
