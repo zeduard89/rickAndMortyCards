@@ -2,11 +2,9 @@ import React from 'react';
 import Card from '../Card/Card';
 import styles from './Cards.module.css'
 
-const Cards = ({characters,onClose}) => {//({characters}) DESTRUCTURING
+const Cards = ({characters,onClose,userId}) => {//({characters}) DESTRUCTURING
 
    
-
-
    return (
       
    <div className={styles.divCards}>  
@@ -16,6 +14,7 @@ const Cards = ({characters,onClose}) => {//({characters}) DESTRUCTURING
          characters.map(({id,name,status,species,gender,origin,image}) =>{//{characters}
          return (
             <Card 
+            userId={userId}
             key={id}//{characters.id}
             id={id}//id
             name={name}//name... etc

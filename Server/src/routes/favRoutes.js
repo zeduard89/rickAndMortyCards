@@ -38,11 +38,6 @@ favRouter.post("/", async (req,res)=>{
         //   }
     try {
 
-        // if(userId){  //RELACIONO FAV CON USER
-        //     const user = await User.findByPk(userId);
-        //     if(user) await User.AddFavorite(char);
-        // }
-
         const characterFav = await postFav(req.body);
         //if(characterFav.error) throw new Error(characterFav.error);
         //Envio characterFav.error por que le envio solo el error

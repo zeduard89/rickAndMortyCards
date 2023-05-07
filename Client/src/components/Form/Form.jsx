@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import validation from './validation';
 import styles from './Form.module.css'
 import imgForm from './imgForm/imgForm'
+import axios from 'axios';
+
 
 const Form = ({login}) => {
 
@@ -31,6 +33,16 @@ const handleOnChange = (event) => {
 }
 
 const handleOnSubmit = (event)=>{
+    //! Prototype de como crear un registro
+    axios.post("http://localhost:3001/login/register",{password:userData.password,
+    email:userData.email,id:1})
+            .then(response => response.data)
+            .then(({data}) => {
+                console.log('Modificar para registro')
+               }) 
+            .catch((error) => console.log(error.message));
+
+    //
     event.preventDefault();
     login(userData);
 }

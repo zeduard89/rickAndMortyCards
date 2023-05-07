@@ -22,13 +22,16 @@ function App() {
    const navigate = useNavigate(); // 
 
    const [access,setAccess] = useState(false)
+   
+   const userId = 1; //! Usuario provisorio, luego generar un REGISTER
 
    const login = (userData) => {
       const { email, password } = userData;
-      const URL = 'http://localhost:3001/login/';
+      const URL = 'http://localhost:3001/login';
       axios(URL + `?email=${email}&password=${password}`)
       .then(({ data }) => {
          const { access } = data;
+         console.log(access);
          setAccess(access);
          access && navigate('/home');
       })
@@ -55,18 +58,20 @@ function App() {
    let [characters, setCharacters] = useState([]);
    
    //Funcion evita repetidos CHARACTER
-   function characterRepeat(id) {
-      let repeat = '';
-      return repeat = characters.find((character) => character.id === id)
+   function characterRepeat(data) {
+      const on = characters.find(character => character.id === data.id);
+      if(on) return false
+      return true;
    }
 
-   //Funcion busca en base de datos CHARACTER
+   //Funcion busca en base de datos CHARACTER SOLO TRAJE 100
    function onSearch(id) {
       if(id > 0 && id < 827) {
          axios(`http://localhost:3001/rickandmorty/characters/${id}`)
             .then(response => response.data)
             .then((data) => {
-               if(data.name && !characterRepeat(id)){
+               
+               if(data.name && characterRepeat(data)){
                setCharacters((oldChars) => [...oldChars, data]);
                }else{
                alert('¡Ingresa una Id Valida, no repetida');
@@ -96,7 +101,7 @@ function App() {
          <NavBar onSearch={onSearch} logout={logout}/>
          <Routes>
             <Route path='/' element={<Form login={login} access={access}/>}/>
-            <Route path='/home' element={<Cards onClose={onClose} characters={characters}/> }/>
+            <Route path='/home' element={<Cards onClose={onClose} characters={characters} userId={userId}/> }/>
             <Route path='/about' element={<About/>}/>
             <Route path='/detail/:id' element={<Detail/>}/>
             <Route path=':error' element={<Error/>}/>

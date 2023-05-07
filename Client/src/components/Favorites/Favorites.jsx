@@ -44,8 +44,8 @@ const handleFilter = (event) => {
             </div>
             
             <div className={styles.divCards}>
-            {
-                myFavorites?.map(fav =>{
+            {   
+                myFavorites?.map(fav =>{    
                     if(fav){
                 return (
                     <Card 
@@ -54,7 +54,7 @@ const handleFilter = (event) => {
                     name={fav.name}//name... etc
                     species={fav.species}
                     gender={fav.gender}
-                    origin={fav.origin}
+                    //origin={fav.origin}
                     image={fav.image}
                     onClose={onClose}
                     

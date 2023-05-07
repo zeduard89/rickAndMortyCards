@@ -13,6 +13,7 @@ setId(id);
 
 const random = () => {
 let randomId = Math?.floor(Math.random()* 825) + 1;
+console.log(randomId);
 return randomId;
 }
 

@@ -6,7 +6,7 @@ import { addFav, removeFav } from '../../redux/actions';
 
 
 
-function Card({id,name,status,species,gender,origin,image,onClose,addFav,removeFav,myFavorites}){
+function Card({id,name,status,species,gender,origin,image,onClose,addFav,removeFav,myFavorites,userId}){
   
 
 
@@ -14,16 +14,16 @@ const [isFav,setIsFav] = useState(false);
 const location = useLocation();
 
 const handleFavorite = () => {
+   
    if(isFav){
       setIsFav(false);
       removeFav(id);
    }
    else{
       setIsFav(true);
-      addFav({id,name,species,gender,image,origin});
+      addFav({id,name,species,gender,image,origin,status,userId});
    }
 }  
-
 
 useEffect(() =>{
    myFavorites.forEach((fav) => {
