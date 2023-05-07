@@ -7,15 +7,13 @@ const {Favorite} = require('../DB_connection')
 const postFav = async (character)=>{
     try {
         
-        const {name,status,species,gender,origin,image}= character;
+        const {id,name,status,species,gender,image}= character;
         
-        if(!name || !status || !species || !gender || !origin || !image) throw new Error ('Faltan datos obligatorios master')
-        
-        const newFav = {name,status,species,gender,origin,image}
-        
+        if(!id || !name || !status || !species || !gender || !image) throw new Error ('Faltan datos obligatorios master')
+        const newFav = {id,name,status,species,gender,image}
         await Favorite.create(newFav); 
-        //CREO en el modelo ('TABLA')
-
+        //CREO un favorito en el modelo ('TABLA')
+        
         return newFav;
 
     } catch (error) {

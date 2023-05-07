@@ -1,10 +1,11 @@
 const express = require('express');
 const userRouter = express.Router();
-const getLogin = require('../controllers/getLogin')
+const {login,register} = require('../controllers/login')
 
 
 //Aca obtengo por query, lo veo en Front
-userRouter.get("/",getLogin);
+userRouter.get("/",login);
+userRouter.post("/register",register);
 
 
 

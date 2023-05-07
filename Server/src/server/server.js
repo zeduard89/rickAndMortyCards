@@ -1,9 +1,11 @@
-const cardRouter = require('./routes/cardRoutes')
-const userRouter = require('./routes/userRoutes')
-const favRouter = require('./routes/favRoutes')
+
+//! Esta es la CONFI de mi SERVER
+
+const cardRouter = require('../routes/cardRoutes')
+const userRouter = require('../routes/userRoutes')
+const favRouter = require('../routes/favRoutes')
 const express = require('express');
 const server = express();
-
 
 
 //! middlewares
@@ -28,10 +30,11 @@ server.use((req, res, next) => {
 
 //! Router
 //agregará el prefijo "/rickandmorty" ,etc.
-server.use('/rickandmorty',cardRouter);
-server.use('/favorites',favRouter);
-server.use('/login',userRouter)
+server.use("/rickandmorty",cardRouter);
+server.use("/favorites",favRouter);
+server.use('/login',userRouter);
 
-module.exports = {
-    server //! exporto el server que estoy utilizando
-};
+
+
+//! exporto el server que estoy utilizando
+module.exports = server;
